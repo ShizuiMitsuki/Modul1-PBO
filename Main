@@ -1,0 +1,50 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package kegiatan_1;
+
+/**
+ *
+ * @author Rakaaa
+ */
+import java.util.Scanner;
+public class main {
+    public static void main(String[] args){
+        //Input
+        System.out.println("===DAFTAR===");
+        Scanner masuk = new Scanner(System.in);
+        String pilnama, pilnim, pilpass;
+        
+        System.out.print("Nama\t\t= ");
+        pilnama = masuk.nextLine();
+        System.out.print("NIM\t\t= ");
+        pilnim = masuk.nextLine();
+        while (pilnim.length() != 15) {
+            System.out.println("NIM harus berjumlah 15 angka");
+            System.out.print("NIM\t\t= ");
+            pilnim = masuk.nextLine();
+        }
+        System.out.print("Password\t= ");
+        pilpass = masuk.nextLine();
+        while (pilpass.length() < 8) {
+            System.out.println("Password Minimal 8 karakter");
+            System.out.print("Password\t= ");
+            pilpass = masuk.nextLine();
+        }
+                
+        Mahasiswa mahasiswa1 = new Mahasiswa();
+        mahasiswa1.setNama(pilnama);
+        mahasiswa1.setNim(pilnim);
+        mahasiswa1.setPassword(pilpass);
+        
+        //Output
+        System.out.println("\n\n\n\n\n\n");
+        System.out.println("Selamat "+mahasiswa1.getNama()+" Anda Berhasil Daftar\n");
+        System.out.println("Berikut Username dan Password Anda");
+        System.out.println("Username\t= "+mahasiswa1.getNim());
+        System.out.println("Password\t= "+mahasiswa1.getPassword());  
+        System.out.println("\n\n");
+    }
+}
